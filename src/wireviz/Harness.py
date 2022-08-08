@@ -190,8 +190,8 @@ class Harness:
                     raise Exception('No side for loops')
                 for loop in connector.loops:
                     if type(loop[0]) == str:
-                        i_loop_0 = connector.pins.index(loop[0])
-                        i_loop_1 = connector.pins.index(loop[1])
+                        i_loop_0 = connector.pins.index(loop[0]) + 1
+                        i_loop_1 = connector.pins.index(loop[1]) + 1
                     else:
                         i_loop_0 = loop[0]
                         i_loop_1 = loop[1]
