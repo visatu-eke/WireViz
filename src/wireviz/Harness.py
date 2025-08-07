@@ -182,9 +182,9 @@ class Harness:
         # prepare ports on connectors depending on which side they will connect
         for _, cable in self.cables.items():
             for connection_color in cable.connections:
-                if connection_color.from_port is not None:  # connect to left
+                if connection_color.from_name is not None:  # connect to left
                     self.connectors[connection_color.from_name].ports_right = True
-                if connection_color.to_port is not None:  # connect to right
+                if connection_color.to_name is not None:  # connect to right
                     self.connectors[connection_color.to_name].ports_left = True
 
         for connector in self.connectors.values():

@@ -213,7 +213,8 @@ class Connector:
             for pin in loop:
                 if not ((self.pins.count(pin) == 1) or (self.pinlabels.count(pin) == 1)):
                     raise Exception(f"Didn't find exactly one {self.name}:{pin} to loop into")
-                self.activate_pin(pin)
+                loop_side = Side.LEFT if self.loop_side == "left" else Side.RIGHT
+                self.activate_pin(pin, loop_side)
 
         for i, item in enumerate(self.additional_components):
             if isinstance(item, dict):
