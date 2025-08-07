@@ -45,11 +45,11 @@ tweak:  # optional tweaking of .gv output
 ```yaml
 <str>   :  # unique connector designator/name
   # general information about a connector (all optional)
-  type: <str>   
-  subtype: <str>   
+  type: <str>
+  subtype: <str>
   color: <color>  # see below
   image: <image>  # see below
-  notes: <str>   
+  notes: <str>
 
   # product information (all optional)
   ignore_in_bom: <bool>  # if set to true the connector is not added to the BOM
@@ -96,7 +96,7 @@ tweak:  # optional tweaking of .gv output
                         # generates one BOM item for every wire in the bundle
                         # instead of a single item for the entire cable;
                         # renders with a dashed outline
-  type: <str>   
+  type: <str>
   gauge: <int/float/str>  # allowed formats:
                           # <int/float> mm2  is understood
                           # <int> AWG        is understood
@@ -116,7 +116,7 @@ tweak:  # optional tweaking of .gv output
                         # A shield can be accessed by using 's' as the wire ID
   color: <color>  # see below
   image: <image>  # see below
-  notes: <str>   
+  notes: <str>
 
   # product information (all optional)
   ignore_in_bom: <bool>  # if set to true the cable or wires are not added to the BOM
@@ -183,12 +183,12 @@ connections:
     - <connector>: [<pin>, ..., <pin>]
 
   - # example (arrows between connectors)
-    - <connector>                  
+    - <connector>
     - <arrow>                               # draw arrow linking the connectors themselves
                                             # use double line arrow (==, <==, <==>, ==>)
     - <connector>
 
-  ...    
+  ...
 ```
 
 - Each connection set is a list of components.
@@ -307,7 +307,7 @@ connections:
     - W.W1: [1,2,...]  # Use template W, generate instance with designator W1
     - Y.Y2: [1,2,...]  # generate more instances from the same templates
     - W.W2: [1,2,...]
-    - Y.Y3: [1,2,...]  
+    - Y.Y3: [1,2,...]
 
   -  # autogeneration of unnamed instances
     - Y3:   [1,2,...]  # reuse existing instance Y3
@@ -331,7 +331,7 @@ Even if a component is not connected to any other components, it must be mention
 ```yaml
 connectors:
   X1:  # this connector will not be connected to any other components
-    ... 
+    ...
 
 connections:
 -
@@ -422,9 +422,9 @@ Parts can be added to a connector or cable in the section `<additional-component
                   # total_length     sum of lengths of each wire in the bundle
   unit: <str>
   pn: <str>            # [internal] part number
-  manufacturer: <str>  # manufacturer name  
+  manufacturer: <str>  # manufacturer name
   mpn: <str>           # manufacturer part number
-  supplier: <str>      # supplier name  
+  supplier: <str>      # supplier name
   spn: <str>           # supplier part number
   bgcolor: <color>     # Background color of entry in diagram component box
 ```
@@ -433,15 +433,15 @@ Alternatively items can be added to just the BOM by putting them in the section 
 
 ```yaml
 -
-  description: <str>              
+  description: <str>
   # all the following are optional:
   qty: <int/float>  # qty to add to the bom (defaults to 1)
-  unit: <str>   
+  unit: <str>
   designators: <List>
   pn: <str>            # [internal] part number
-  manufacturer: <str>  # manufacturer name  
+  manufacturer: <str>  # manufacturer name
   mpn: <str>           # manufacturer part number
-  supplier: <str>      # supplier name  
+  supplier: <str>      # supplier name
   spn: <str>           # supplier part number
 ```
 
